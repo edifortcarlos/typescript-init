@@ -1,4 +1,5 @@
 // Import stylesheets
+import { MyTimer } from './my-timer';
 import './style.css';
 
 let divResult = document.getElementById('parimpar-div');
@@ -30,4 +31,14 @@ document.getElementById('tabuada-btn').addEventListener('click', () => {
     cell1.innerHTML = `${num} x ${i}`;
     cell2.innerHTML = `${num * i}`;
   }
+});
+
+let mytimer: MyTimer = new MyTimer(document.getElementById('timer-span'));
+
+document.getElementById('timer-start-btn').addEventListener('click', () => {
+  mytimer.start();
+});
+
+document.getElementById('timer-stop-btn').addEventListener('click', () => {
+  mytimer.stop();
 });
